@@ -62,8 +62,8 @@
 								</td>
 								<td>
 								<a href="{{route('admin.manage_student',$student->id)}}"><button class="btn btn-warning">View</button></a>
-									<a><button class="btn btn-outline-success">Edit</button></a>
-									<a><button class="btn btn-outline-danger">Delete</button></a>
+									<a href="{{ route('admin.student.edit',$student->id) }}"><button class="btn btn-success">Edit</button></a>
+									<a><button class="btn btn-danger">Delete</button></a>
 								</td>
 							</tr>
 							@endforeach

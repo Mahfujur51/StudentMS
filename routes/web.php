@@ -23,3 +23,5 @@ Route::get('admin/add_student', 'StudentController@index')->name('add_student');
 Route::post('admin/store_student', 'StudentController@store')->name('store_student');
 Route::get('admin/show_student', 'StudentController@show')->name('showallstudent');
 Route::get('admin/manage_student/{id}', 'StudentController@show_student')->name('admin.manage_student');
+Route::get('admin/editstudent/{id}', 'StudentController@edit_student')->name('admin.student.edit');
+Route::post('admin/updatestudent/{id}', 'StudentController@update_student')->name('admin.update_student');
