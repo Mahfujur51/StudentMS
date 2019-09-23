@@ -33,6 +33,7 @@ class StudentController extends Controller
 		$students->dept = $request->dept;
 		$students->status = $request->status;
 		$students->email = $request->email;
+		$students->password = $request->password;
 		$students->description = $request->description;
 		if (($request->image) > 0) {
 			//insert image
@@ -79,6 +80,7 @@ class StudentController extends Controller
 		$upstudent->dept = $request->dept;
 		$upstudent->status = $request->status;
 		$upstudent->email = $request->email;
+		$students->password = $request->password;
 		$upstudent->description = $request->description;
 		if (($request->image) > 0) {
 			//insert image
@@ -92,5 +94,12 @@ class StudentController extends Controller
 		session()->flash('success', 'Student Update  Successfully !!');
 		return back();
 
+	}
+	public function delete($id){
+		$students=Student::find($id);
+		$students->delete();
+		session()->flash('success', 'Student Deleted  Successfully !!');
+
+		return back();
 	}
 }

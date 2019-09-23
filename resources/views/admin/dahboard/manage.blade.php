@@ -4,6 +4,20 @@
 	<h1 class="page-title">Data table</h1>
 	<div class="card">
 		<div class="card-body">
+			@if (Session::has('success'))
+			<div class="alert alert-success">
+				<p>{{Session::get('success')}}</p>
+			</div>
+			@endif
+			@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+			@endif
 			<h2 class="card-title">Data table</h2>
 			<div class="row">
 				<div class="col-12">
@@ -25,7 +39,7 @@
 							</tr>
 						</thead>
 						<tbody>
-						@foreach ($students as $key => $student)
+							@foreach ($students as $key => $student)
 							<tr>
 								<td>{{$key+1}}</td>
 								<td>{{$student->name}}</td>
@@ -53,7 +67,7 @@
 								
 								
 								
-							<td><img src="{{ asset('images/student/'.$student['image']) }}" height="100px" >			<td>
+								<td><img src="{{ asset('images/student/'.$student['image']) }}" height="100px" >			<td>
 									@if ($student->status==1)
 									<label class="badge badge-info">Active</label>
 									@else
@@ -61,9 +75,9 @@
 									@endif
 								</td>
 								<td>
-								<a href="{{route('admin.manage_student',$student->id)}}"><button class="btn btn-warning">View</button></a>
+									<a href="{{route('admin.manage_student',$student->id)}}"><button class="btn btn-warning">View</button></a>
 									<a href="{{ route('admin.student.edit',$student->id) }}"><button class="btn btn-success">Edit</button></a>
-									<a><button class="btn btn-danger">Delete</button></a>
+									<a href="{{ route('admin.delete_student',$student->id) }}"><button class="btn btn-danger" >Delete</button></a>
 								</td>
 							</tr>
 							@endforeach

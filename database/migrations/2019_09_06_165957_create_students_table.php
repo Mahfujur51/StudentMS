@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->integer('roll')->unsing();
             $table->string('dept');
             $table->string('email');
+            $table->string('password');
             $table->text('description');
             $table->integer('status')->default(1);
             $table->string('image')->default('defalut.png');
