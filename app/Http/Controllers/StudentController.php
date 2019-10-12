@@ -1,18 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Student;
 use Image;
-
+use Session;
 class StudentController extends Controller
 {
 	public function index()
 	{
 		return view('admin.create_student');
 	}
-
 	public function store(Request $request)
 	{
 		$request->validate([
@@ -93,13 +90,78 @@ class StudentController extends Controller
 		$upstudent->save();
 		session()->flash('success', 'Student Update  Successfully !!');
 		return back();
-
 	}
 	public function delete($id){
 		$students=Student::find($id);
 		$students->delete();
 		session()->flash('success', 'Student Deleted  Successfully !!');
-
 		return back();
 	}
+	public function login(Request $request){
+		
+		$email=$request->email;
+		$password=$request->password;
+		$students=Student::where('email','=',$email)
+		->where('password','=',$password)
+		->first();
+		
+		if($students){
+			Session::put('email',$students->email);
+			Session::put('id',$students->id);
+			//dd($students);
+			return redirect()->route('student.dashboard');
+			
+		}
+
+
+
+		else{
+			Session()->flash('success','Invalid Email & and password');
+			return redirect()->route('index');
+		}
+		
+	}
+
+	public function studentview() 
+	{
+		$id=Session::get('id');
+		$student=Student::find($id);
+	
+ 		return view('student.studentview',compact('student'));
+	}
+	public function dashboard(){
+
+
+
+
+		return view('student.dashboard');
+	}
+	public function studentlogin(){
+		return view('welcome');
+	}
+	protected function loggedOut(Request $request) {
+		Session::put('email',null);
+		Session::put('id',null);
+		return redirect('index');
+	}
+
+	public function studentupdate(){
+		$id=Session::get('id');
+		$student=Student::find($id);
+		return view('student.studentsettings',compact('student'));
+	}
+
+	public function update_password(Request $request,$id){
+		//$id=Session::get('id');
+		$student=Student::find($id);
+
+
+
+		$student->password=$request->password;
+		$student->save();
+		session()->flash('success', 'Password Updated  Successfully !!');
+		return back();
+
+	}
+		
 }

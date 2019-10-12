@@ -17,4 +17,5 @@
   <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('backend/images/favicon.html')}}" />
+  <link rel="stylesheet" href="{{asset('backend/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" />
 </head>

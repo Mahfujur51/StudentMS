@@ -1,7 +1,7 @@
 @extends('admin.dahboard.dashboard')
 @section('content')
 <div class="content-wrapper">
-	<h1 class="page-title">Total Student</h1>
+	<h1 class="page-title">Textile Student</h1>
 	<div class="card">
 		<div class="card-body">
 			@if (Session::has('success'))
@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 			@endif
-			<h2 class="card-title">Total Student</h2>
+			<h2 class="card-title">Textile  Student</h2>
 			<div class="row">
 				<div class="col-12">
 					<table id="order-listing" class="table table-striped" style="width:100%;">
@@ -28,9 +28,9 @@
 								<th>Name</th>
 								<th>Roll</th>
 								<th>Father Name</th>
-								
+								<th>Mother Name</th>
 								<th>Department</th>
-								<th>Distric</th>
+								
 								
 								
 								<th>Image</th>
@@ -45,7 +45,7 @@
 								<td>{{$student->name}}</td>
 								<td>{{$student->roll}}</td>
 								<td>{{$student->fname}}</td>
-						
+								<td>{{$student->mname}}</td>
 								<td>
 									@if ($student->dept==1)
 									{{'CSE'}}
@@ -63,7 +63,7 @@
 									{{'BME'}}
 									@endif
 								</td>
-								<td>{{$student->distric}}</td>
+								
 								
 								
 								

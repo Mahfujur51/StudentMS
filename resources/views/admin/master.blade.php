@@ -5,17 +5,21 @@
             <div class="col-sm-6 col-md-3 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 class="card-title">Orders</h2>
+                  <h2 class="card-title">Total Student</h2>
                 </div>
                 <div class="dashboard-chart-card-container">
-                  <div id="dashboard-card-chart-1" class="card-float-chart"></div>
+                  
+                    <h1 class="text-center">{{$student}}</h1>
+                      
+
+                  
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-3 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 class="card-title">Market Growth</h2>
+                  <h2 class="card-title">Total Teacher</h2>
                 </div>
                 <div class="dashboard-chart-card-container">
                   <div id="dashboard-card-chart-2" class="card-float-chart"></div>
@@ -44,7 +48,7 @@
             </div>
           </div>
 
-          <div class="row">
+        {{--   <div class="row">
             <div class="col-md-4 grid-margin d-flex align-items-stretch">
               <div class="row">
                 <div class="col-12 grid-margin d-flex align-items-stretch">
@@ -215,7 +219,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
   
         </div>
 

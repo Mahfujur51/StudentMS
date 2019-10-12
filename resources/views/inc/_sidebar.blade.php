@@ -47,25 +47,25 @@
               <div class="collapse" id="layoutsSubmenu">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/boxed-layout.html">CSE</a>
+                    <a class="nav-link" href="{{route('admin.csestudent')}}">CSE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/rtl-layout.html">EEE</a>
+                    <a class="nav-link" href="{{route('admin.eeestudent')}}">EEE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/horizontal-menu.html">IPE</a>
+                    <a class="nav-link" href="{{route('admin.ipestudent')}}">IPE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/horizontal-menu.html">PME</a>
+                    <a class="nav-link" href="{{route('admin.pmestudent')}}">PME</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/horizontal-menu.html">CHE</a>
+                    <a class="nav-link" href="{{route('admin.chestudent')}}">CHE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/horizontal-menu.html">BME</a>
+                    <a class="nav-link" href="{{route('admin.bmestudent')}}">BME</a>
                   </li>
                    <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/horizontal-menu.html">TE</a>
+                    <a class="nav-link" href="{{route('admin.testudent')}}">TE</a>
                   </li>
                 </ul>
               </div>
@@ -79,10 +79,10 @@
               <div class="collapse" id="sidebar_layouts">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/compact-menu.html">Compact menu</a>
+                  <a class="nav-link" href="{{route('add.teacher')}}">Add Teacher</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-collapsed.html">Icon menu</a>
+                    <a class="nav-link" href="{{ route('show.teacher') }}">Show Teacher</a>
                   </li>
                   
                 </ul>
